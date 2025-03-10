@@ -1,1 +1,8 @@
-*/Makefile linguist-vendored=true
+# 忽略所有文件和文件夹，除了 src、build/httpd 和 include
+* linguist-vendored=true
+src/**/* linguist-vendored=false
+build/httpd/**/* linguist-vendored=false
+include/**/* linguist-vendored=false
+
+# 忽略文档文件
+*.md linguist-documentation=true
