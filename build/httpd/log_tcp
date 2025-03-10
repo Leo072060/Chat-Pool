@@ -36,4 +36,18 @@ Sec-Fetch-Dest: empty
 Referer: http://localhost:7001/
 Accept-Encoding: gzip, deflate, br, zstd
 Accept-Language: zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7,en-GB;q=0.6
-Cookie: chat_user_id=user-az3mybnvoj
+Cookie: chat_user_id=user-az3mybnvoj[2025-03-11 00:47:41] HTTPD_TCP starts running
+[2025-03-11 00:47:45] Socket initialized on IP: 0.0.0.0, Port: 7001, fd=3
+[2025-03-11 00:47:51] Accepted connection from client IP: 172.20.69.176
+[2025-03-11 00:47:51] [Request]
+GET / HTTP/1.1
+Host: 80ss2640ri25.vicp.fun
+Sec-Fetch-Site: none
+Cookie: chat_user_id=user-utcysfsx9m
+Connection: keep-alive
+Sec-Fetch-Mode: navigate
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 17_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.7 Mobile/15E148 Safari/604.1
+Accept-Language: en-US,en;q=0.9
+Sec-Fetch-Dest: document
+Accept-Encoding: gzip, deflate, br

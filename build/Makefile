@@ -142,53 +142,53 @@ transaction/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/transaction.dir/build.make CMakeFiles/transaction.dir/build
 .PHONY : transaction/fast
 
-src/HTTPD/HTTPD.o: src/HTTPD/HTTPD.cpp.o
-.PHONY : src/HTTPD/HTTPD.o
+src/httpd/httpd.o: src/httpd/httpd.cpp.o
+.PHONY : src/httpd/httpd.o
 
 # target to build an object file
-src/HTTPD/HTTPD.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/HTTPD.dir/build.make CMakeFiles/HTTPD.dir/src/HTTPD/HTTPD.cpp.o
-.PHONY : src/HTTPD/HTTPD.cpp.o
+src/httpd/httpd.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/HTTPD.dir/build.make CMakeFiles/HTTPD.dir/src/httpd/httpd.cpp.o
+.PHONY : src/httpd/httpd.cpp.o
 
-src/HTTPD/HTTPD.i: src/HTTPD/HTTPD.cpp.i
-.PHONY : src/HTTPD/HTTPD.i
+src/httpd/httpd.i: src/httpd/httpd.cpp.i
+.PHONY : src/httpd/httpd.i
 
 # target to preprocess a source file
-src/HTTPD/HTTPD.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/HTTPD.dir/build.make CMakeFiles/HTTPD.dir/src/HTTPD/HTTPD.cpp.i
-.PHONY : src/HTTPD/HTTPD.cpp.i
+src/httpd/httpd.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/HTTPD.dir/build.make CMakeFiles/HTTPD.dir/src/httpd/httpd.cpp.i
+.PHONY : src/httpd/httpd.cpp.i
 
-src/HTTPD/HTTPD.s: src/HTTPD/HTTPD.cpp.s
-.PHONY : src/HTTPD/HTTPD.s
+src/httpd/httpd.s: src/httpd/httpd.cpp.s
+.PHONY : src/httpd/httpd.s
 
 # target to generate assembly for a file
-src/HTTPD/HTTPD.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/HTTPD.dir/build.make CMakeFiles/HTTPD.dir/src/HTTPD/HTTPD.cpp.s
-.PHONY : src/HTTPD/HTTPD.cpp.s
+src/httpd/httpd.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/HTTPD.dir/build.make CMakeFiles/HTTPD.dir/src/httpd/httpd.cpp.s
+.PHONY : src/httpd/httpd.cpp.s
 
-src/HTTPD/httpd_tcp.o: src/HTTPD/httpd_tcp.cpp.o
-.PHONY : src/HTTPD/httpd_tcp.o
+src/httpd/httpd_tcp.o: src/httpd/httpd_tcp.cpp.o
+.PHONY : src/httpd/httpd_tcp.o
 
 # target to build an object file
-src/HTTPD/httpd_tcp.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/HTTPD.dir/build.make CMakeFiles/HTTPD.dir/src/HTTPD/httpd_tcp.cpp.o
-.PHONY : src/HTTPD/httpd_tcp.cpp.o
+src/httpd/httpd_tcp.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/HTTPD.dir/build.make CMakeFiles/HTTPD.dir/src/httpd/httpd_tcp.cpp.o
+.PHONY : src/httpd/httpd_tcp.cpp.o
 
-src/HTTPD/httpd_tcp.i: src/HTTPD/httpd_tcp.cpp.i
-.PHONY : src/HTTPD/httpd_tcp.i
+src/httpd/httpd_tcp.i: src/httpd/httpd_tcp.cpp.i
+.PHONY : src/httpd/httpd_tcp.i
 
 # target to preprocess a source file
-src/HTTPD/httpd_tcp.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/HTTPD.dir/build.make CMakeFiles/HTTPD.dir/src/HTTPD/httpd_tcp.cpp.i
-.PHONY : src/HTTPD/httpd_tcp.cpp.i
+src/httpd/httpd_tcp.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/HTTPD.dir/build.make CMakeFiles/HTTPD.dir/src/httpd/httpd_tcp.cpp.i
+.PHONY : src/httpd/httpd_tcp.cpp.i
 
-src/HTTPD/httpd_tcp.s: src/HTTPD/httpd_tcp.cpp.s
-.PHONY : src/HTTPD/httpd_tcp.s
+src/httpd/httpd_tcp.s: src/httpd/httpd_tcp.cpp.s
+.PHONY : src/httpd/httpd_tcp.s
 
 # target to generate assembly for a file
-src/HTTPD/httpd_tcp.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/HTTPD.dir/build.make CMakeFiles/HTTPD.dir/src/HTTPD/httpd_tcp.cpp.s
-.PHONY : src/HTTPD/httpd_tcp.cpp.s
+src/httpd/httpd_tcp.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/HTTPD.dir/build.make CMakeFiles/HTTPD.dir/src/httpd/httpd_tcp.cpp.s
+.PHONY : src/httpd/httpd_tcp.cpp.s
 
 src/message/message.o: src/message/message.cpp.o
 .PHONY : src/message/message.o
@@ -275,12 +275,12 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... HTTPD"
 	@echo "... transaction"
-	@echo "... src/HTTPD/HTTPD.o"
-	@echo "... src/HTTPD/HTTPD.i"
-	@echo "... src/HTTPD/HTTPD.s"
-	@echo "... src/HTTPD/httpd_tcp.o"
-	@echo "... src/HTTPD/httpd_tcp.i"
-	@echo "... src/HTTPD/httpd_tcp.s"
+	@echo "... src/httpd/httpd.o"
+	@echo "... src/httpd/httpd.i"
+	@echo "... src/httpd/httpd.s"
+	@echo "... src/httpd/httpd_tcp.o"
+	@echo "... src/httpd/httpd_tcp.i"
+	@echo "... src/httpd/httpd_tcp.s"
 	@echo "... src/message/message.o"
 	@echo "... src/message/message.i"
 	@echo "... src/message/message.s"

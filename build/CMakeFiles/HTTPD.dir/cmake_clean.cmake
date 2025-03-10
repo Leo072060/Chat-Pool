@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/HTTPD.dir/src/HTTPD/HTTPD.cpp.o"
-  "CMakeFiles/HTTPD.dir/src/HTTPD/HTTPD.cpp.o.d"
-  "CMakeFiles/HTTPD.dir/src/HTTPD/httpd_tcp.cpp.o"
-  "CMakeFiles/HTTPD.dir/src/HTTPD/httpd_tcp.cpp.o.d"
+  "CMakeFiles/HTTPD.dir/src/httpd/httpd.cpp.o"
+  "CMakeFiles/HTTPD.dir/src/httpd/httpd.cpp.o.d"
+  "CMakeFiles/HTTPD.dir/src/httpd/httpd_tcp.cpp.o"
+  "CMakeFiles/HTTPD.dir/src/httpd/httpd_tcp.cpp.o.d"
   "CMakeFiles/HTTPD.dir/src/message/message.cpp.o"
   "CMakeFiles/HTTPD.dir/src/message/message.cpp.o.d"
   "HTTPD"

@@ -1,7 +1,7 @@
 # Tiny Bridge --- Chat Pool
 
 # 在Windows子系统WSL（Linux）中用C++搭建简单聊天服务器
-
+仓库地址：https://github.com/Leo072060/Chat-Pool
 <img src=".\assert\display.jpg" alt="display" style="zoom: 50%;" />
 
 # 项目简介
@@ -207,4 +207,4 @@ Aborted (core dumped)
 
 # 其他
 
-此项目是本人在学习计算机网络的时候突发奇想构建的，整体比较简洁，欢迎大家多多提建议。
+此项目是本人在学习计算机网络的时候突发奇想构建的，整体比较简洁，欢迎大家多多提建议，多多star！

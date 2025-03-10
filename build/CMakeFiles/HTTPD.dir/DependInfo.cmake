@@ -8,8 +8,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/twh/TinyBridge/src/HTTPD/HTTPD.cpp" "CMakeFiles/HTTPD.dir/src/HTTPD/HTTPD.cpp.o" "gcc" "CMakeFiles/HTTPD.dir/src/HTTPD/HTTPD.cpp.o.d"
-  "/home/twh/TinyBridge/src/HTTPD/httpd_tcp.cpp" "CMakeFiles/HTTPD.dir/src/HTTPD/httpd_tcp.cpp.o" "gcc" "CMakeFiles/HTTPD.dir/src/HTTPD/httpd_tcp.cpp.o.d"
+  "/home/twh/TinyBridge/src/httpd/httpd.cpp" "CMakeFiles/HTTPD.dir/src/httpd/httpd.cpp.o" "gcc" "CMakeFiles/HTTPD.dir/src/httpd/httpd.cpp.o.d"
+  "/home/twh/TinyBridge/src/httpd/httpd_tcp.cpp" "CMakeFiles/HTTPD.dir/src/httpd/httpd_tcp.cpp.o" "gcc" "CMakeFiles/HTTPD.dir/src/httpd/httpd_tcp.cpp.o.d"
   "/home/twh/TinyBridge/src/message/message.cpp" "CMakeFiles/HTTPD.dir/src/message/message.cpp.o" "gcc" "CMakeFiles/HTTPD.dir/src/message/message.cpp.o.d"
   )
 
