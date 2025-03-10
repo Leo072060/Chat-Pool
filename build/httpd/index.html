@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Pool</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background: #f0f2f5;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .chat-container {
+            max-width: 1000px;
+            margin: 20px auto;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            width: 95%;
+        }
+
+        .messages {
+            flex-grow: 1;
+            padding: 24px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            background: #f8f9fa;
+        }
+
+        .message {
+            max-width: 75%;
+            padding: 14px 20px;
+            border-radius: 20px;
+            background: #ffffff;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+            animation: slideIn 0.25s ease-out;
+            position: relative;
+        }
+
+        .message.self {
+            background: #0084ff;
+            color: white;
+            align-self: flex-end;
+        }
+
+        .message.other {
+            background: #e4e6eb;
+            color: #050505;
+            align-self: flex-start;
+        }
+
+        .message::after {
+            content: "";
+            position: absolute;
+            bottom: -8px;
+            width: 16px;
+            height: 16px;
+            background: inherit;
+            clip-path: polygon(0 0, 100% 0, 100% 100%);
+        }
+
+        .message.self::after {
+            right: 0;
+            transform: rotate(-17deg);
+        }
+
+        .message.other::after {
+            left: 0;
+            transform: rotate(45deg);
+        }
+
+        .message-content {
+            font-size: 16px;
+            line-height: 1.5;
+            word-break: break-word;
+        }
+
+        .message-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 8px;
+            font-size: 12px;
+            opacity: 0.9;
+        }
+
+        .user-tag {
+            font-weight: 600;
+            background: rgba(255, 255, 255, 0.15);
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        .timestamp {
+            font-feature-settings: "tnum";
+        }
+
+        .input-area {
+            padding: 20px;
+            border-top: 1px solid rgba(0, 0, 0, 0.08);
+            display: flex;
+            gap: 12px;
+            background: white;
+        }
+
+        input {
+            flex-grow: 1;
+            padding: 14px 20px;
+            border: 2px solid #e4e6eb;
+            border-radius: 28px;
+            outline: none;
+            font-size: 16px;
+            transition: border-color 0.2s;
+        }
+
+        input:focus {
+            border-color: #0084ff;
+        }
+
+        button {
+            padding: 14px 28px;
+            background: #0084ff;
+            color: white;
+            border: none;
+            border-radius: 28px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        button:hover {
+            background: #0073e6;
+            transform: translateY(-1px);
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(12px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="chat-container">
+        <div class="messages" id="messages"></div>
+        <div class="input-area">
+            <input type="text" id="messageInput" placeholder="输入消息（按回车发送）...">
+            <button onclick="sendMessage()">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" />
+                </svg>
+                发送
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // Cookie 操作工具
+        const cookieManager = {
+            get(name) {
+                return document.cookie
+                    .split('; ')
+                    .find(row => row.startsWith(name + '='))
+                    ?.split('=')[1];
+            },
+            set(name, value, days = 365) {
+                const date = new Date();
+                date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+                document.cookie = `${name}=${value};expires=${date.toUTCString()};path=/`;
+            }
+        };
+
+        // 用户身份管理
+        const userManager = {
+            getUserId() {
+                let userId = cookieManager.get('chat_user_id');
+                if (!userId) {
+                    userId = this.generateUserId();
+                    cookieManager.set('chat_user_id', userId);
+                }
+                return userId;
+            },
+            generateUserId() {
+                return 'user-' + Math.random().toString(36).substr(2, 6) +
+                    Date.now().toString(36).substr(4);
+            },
+            getShortId(userId) {
+                return userId ? userId.slice(-4) : '????';
+            }
+        };
+
+        // DOM 元素引用
+        const dom = {
+            messages: document.getElementById('messages'),
+            input: document.getElementById('messageInput')
+        };
+
+        // 消息处理核心
+        const messageHandler = {
+            currentMessages: [], // 缓存当前已显示的消息
+
+            async send(content) {
+                try {
+                    const response = await fetch('/messages', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            content,
+                            userId: userManager.getUserId(),
+                            timestamp: new Date().toISOString()
+                        })
+                    });
+
+                    if (!response.ok) throw new Error('发送失败');
+                } catch (error) {
+                    console.error('发送错误:', error);
+                    alert('消息发送失败，请检查网络连接');
+                }
+            },
+
+            renderMessages(messages) {
+                dom.messages.innerHTML = '';
+                messages.forEach(msg => {
+                    const isSelf = msg.userId === userManager.getUserId();
+                    const messageEl = this.createMessageElement(msg, isSelf);
+                    dom.messages.appendChild(messageEl);
+                });
+                this.scrollToBottom();
+            },
+
+            async loadHistory() {
+                try {
+                    const response = await fetch('/messages');
+                    const newMessages = await response.json();
+
+                    // 1. 检测是否有新消息
+                    const latestExistingId = this.currentMessages.length > 0
+                        ? this.currentMessages[this.currentMessages.length - 1].timestamp
+                        : 0;
+
+                    const newItems = newMessages.filter(msg =>
+                        !this.currentMessages.some(existing => existing.timestamp === msg.timestamp)
+                    );
+
+                    if (newItems.length > 0) {
+                        // 2. 仅追加新消息（而不是全量渲染）
+                        this.appendNewMessages(newItems);
+                        this.currentMessages = [...this.currentMessages, ...newItems];
+                    }
+                } catch (error) {
+                    console.error('加载错误:', error);
+                }
+            },
+
+            appendNewMessages(newItems) {
+                newItems.forEach(msg => {
+                    const isSelf = msg.userId === userManager.getUserId();
+                    const messageEl = this.createMessageElement(msg, isSelf);
+                    dom.messages.appendChild(messageEl);
+                });
+                this.scrollToBottom();
+            },
+
+            createMessageElement(msg, isSelf) {
+                const element = document.createElement('div');
+                element.className = `message ${isSelf ? 'self' : 'other'}`;
+
+                const time = new Date(msg.timestamp).toLocaleTimeString([], {
+                    hour: '2-digit',
+                    minute: '2-digit'
+                });
+
+                element.innerHTML = `
+                    <div class="message-content">${this.sanitize(msg.content)}</div>
+                    <div class="message-meta">
+                        <span class="user-tag">${isSelf ? '你' : '用户' + userManager.getShortId(msg.userId)}</span>
+                        <span class="timestamp">${time}</span>
+                    </div>
+                `;
+                return element;
+            },
+
+            sanitize(text) {
+                const div = document.createElement('div');
+                div.textContent = text;
+                return div.innerHTML;
+            },
+
+            scrollToBottom() {
+                dom.messages.scrollTop = dom.messages.scrollHeight;
+            }
+        };
+
+        // 事件监听
+        dom.input.addEventListener('keypress', e => {
+            if (e.key === 'Enter' && !e.shiftKey) {
+                e.preventDefault();
+                sendMessage();
+            }
+        });
+
+        // 初始化
+        function initialize() {
+            userManager.getUserId(); // 确保用户ID生成
+            messageHandler.loadHistory();
+            setInterval(messageHandler.loadHistory.bind(messageHandler), 1000);
+        }
+
+        // 发送消息
+        window.sendMessage = async function () {
+            const content = dom.input.value.trim();
+            if (!content) return;
+
+            dom.input.value = '';
+            await messageHandler.send(content);
+
+            messageHandler.loadHistory();
+        };
+
+        // 启动应用
+        initialize();
+    </script>
+</body>
+
+</html>

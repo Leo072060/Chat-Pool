@@ -1,0 +1,4 @@
+/home/twh/TinyBridge/build/CMakeFiles/HTTPD.dir
+/home/twh/TinyBridge/build/CMakeFiles/transaction.dir
+/home/twh/TinyBridge/build/CMakeFiles/edit_cache.dir
+/home/twh/TinyBridge/build/CMakeFiles/rebuild_cache.dir
