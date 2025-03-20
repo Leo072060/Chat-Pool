@@ -2,11 +2,12 @@
 
 # 在Windows子系统WSL（Linux）中用C++搭建简单聊天服务器
 仓库地址：https://github.com/Leo072060/Chat-Pool
-<img src=".\assert\display.jpg" alt="display" style="zoom: 50%;" />
+<img src=".\assert\xiaowen_ai.png" alt="display" style="zoom: 50%;" />
 
 # 项目简介
 
 支持多用户在线实时聊天，消息通过服务器高效转发，确保所有用户同步接收最新聊天内容。
+增加AI助手，输入“小雯”或“AI”即可触发！
 
 **HTTP服务器**
 采用C++实现，支持处理常见的HTTP请求（如GET、POST），能够解析浏览器请求并生成对应的HTTP响应，确保与客户端的高效交互。

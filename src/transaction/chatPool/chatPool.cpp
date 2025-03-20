@@ -4,9 +4,10 @@
 #include <fstream>
 #include <stdexcept>
 #include <vector>
+#include <iostream>
 
-ChatPool::ChatPool(const std::string &dataBase_path)
-    : m_dataBase_path(dataBase_path)
+ChatPool::ChatPool(const std::string &dataBase_path,const std::string &command_ai)
+    : m_dataBase_path(dataBase_path),m_command_ai(command_ai)
 {
     std::ofstream testFile(m_dataBase_path, std::ios::app);
     if (!testFile)
@@ -95,4 +96,17 @@ std::vector<Message> ChatPool::readRecentMessages(const int index) const
     }
 
     return messages;
+}
+
+void ChatPool::AI()
+{
+    std::string command = m_command_ai;
+
+    int result = std::system(command.c_str());
+
+    if (result != 0) {
+        std::cerr << "Failed to call AI script. Error code: " << result << std::endl;
+    } else {
+        std::cout << "AI script executed successfully." << std::endl;
+    }
 }

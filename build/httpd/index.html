@@ -14,7 +14,7 @@
         }
 
         body {
-            background: #f0f2f5;
+            background: linear-gradient(135deg, #f0f2f5, #e6e9ef);
             height: 100vh;
             display: flex;
             flex-direction: column;
@@ -25,11 +25,12 @@
             margin: 20px auto;
             background: white;
             border-radius: 16px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
             flex-grow: 1;
             display: flex;
             flex-direction: column;
             width: 95%;
+            overflow: hidden;
         }
 
         .messages {
@@ -47,13 +48,19 @@
             padding: 14px 20px;
             border-radius: 20px;
             background: #ffffff;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-            animation: slideIn 0.25s ease-out;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            animation: slideIn 0.3s ease-out;
             position: relative;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .message:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
         }
 
         .message.self {
-            background: #0084ff;
+            background: linear-gradient(135deg, #0084ff, #0066cc);
             color: white;
             align-self: flex-end;
         }
@@ -62,6 +69,11 @@
             background: #e4e6eb;
             color: #050505;
             align-self: flex-start;
+        }
+
+        .message.ai {
+            background: linear-gradient(135deg, #ff7eb9, #ff5a87);
+            color: white;
         }
 
         .message::after {
@@ -82,6 +94,10 @@
         .message.other::after {
             left: 0;
             transform: rotate(45deg);
+        }
+
+        .message.ai::after {
+            background: #ff7eb9;
         }
 
         .message-content {
@@ -125,16 +141,17 @@
             border-radius: 28px;
             outline: none;
             font-size: 16px;
-            transition: border-color 0.2s;
+            transition: border-color 0.2s, box-shadow 0.2s;
         }
 
         input:focus {
             border-color: #0084ff;
+            box-shadow: 0 0 0 3px rgba(0, 132, 255, 0.1);
         }
 
         button {
             padding: 14px 28px;
-            background: #0084ff;
+            background: linear-gradient(135deg, #0084ff, #0066cc);
             color: white;
             border: none;
             border-radius: 28px;
@@ -147,7 +164,7 @@
         }
 
         button:hover {
-            background: #0073e6;
+            background: linear-gradient(135deg, #0073e6, #005bb3);
             transform: translateY(-1px);
         }
 
@@ -180,6 +197,9 @@
     </div>
 
     <script>
+        // 定义 AI 用户 ID
+        const AI_USER_ID = 'ai-user';
+
         // Cookie 操作工具
         const cookieManager = {
             get(name) {
@@ -247,7 +267,8 @@
                 dom.messages.innerHTML = '';
                 messages.forEach(msg => {
                     const isSelf = msg.userId === userManager.getUserId();
-                    const messageEl = this.createMessageElement(msg, isSelf);
+                    const isAI = msg.userId === AI_USER_ID;
+                    const messageEl = this.createMessageElement(msg, isSelf, isAI);
                     dom.messages.appendChild(messageEl);
                 });
                 this.scrollToBottom();
@@ -257,6 +278,13 @@
                 try {
                     const response = await fetch('/messages');
                     const newMessages = await response.json();
+
+                    // // 模拟一条 AI 消息（仅用于测试）
+                    // newMessages.push({
+                    //     content: '你好，我是 AI 助手！',
+                    //     userId: AI_USER_ID,
+                    //     timestamp: new Date().toISOString()
+                    // }); 
 
                     // 1. 检测是否有新消息
                     const latestExistingId = this.currentMessages.length > 0
@@ -280,15 +308,16 @@
             appendNewMessages(newItems) {
                 newItems.forEach(msg => {
                     const isSelf = msg.userId === userManager.getUserId();
-                    const messageEl = this.createMessageElement(msg, isSelf);
+                    const isAI = msg.userId === AI_USER_ID;
+                    const messageEl = this.createMessageElement(msg, isSelf, isAI);
                     dom.messages.appendChild(messageEl);
                 });
                 this.scrollToBottom();
             },
 
-            createMessageElement(msg, isSelf) {
+            createMessageElement(msg, isSelf, isAI) {
                 const element = document.createElement('div');
-                element.className = `message ${isSelf ? 'self' : 'other'}`;
+                element.className = `message ${isSelf ? 'self' : isAI ? 'ai' : 'other'}`;
 
                 const time = new Date(msg.timestamp).toLocaleTimeString([], {
                     hour: '2-digit',
@@ -298,7 +327,7 @@
                 element.innerHTML = `
                     <div class="message-content">${this.sanitize(msg.content)}</div>
                     <div class="message-meta">
-                        <span class="user-tag">${isSelf ? '你' : '用户' + userManager.getShortId(msg.userId)}</span>
+                        <span class="user-tag">${isSelf ? '你' : isAI ? '小雯' : '用户' + userManager.getShortId(msg.userId)}</span>
                         <span class="timestamp">${time}</span>
                     </div>
                 `;

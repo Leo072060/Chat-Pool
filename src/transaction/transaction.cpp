@@ -6,9 +6,13 @@
 #include <iostream>
 #include <sstream>
 #include <string>
+#include <thread>
 #include <unistd.h>
 #include <vector>
 
+void handleAI(ChatPool& chatPool) {
+    chatPool.AI();
+}
 std::string handleTransaction(const std::string &request, ChatPool &chatPool)
 {
     Message requestMsg;
@@ -39,6 +43,25 @@ std::string handleTransaction(const std::string &request, ChatPool &chatPool)
         Message responseMsg;
         responseMsg.insert("status", "success");
         responseMsg.insert("message", "Message stored successfully.");
+
+        // deal AI
+        std::string              content      = requestMsg.get("content");
+        bool                     shouldCallAI = false;
+        std::vector<std::string> keywords     = {"小雯", "AI", "ai"};
+        for (const auto &keyword : keywords)
+        {
+            if (content.find(keyword) != std::string::npos)
+            {
+                shouldCallAI = true;
+                break;
+            }
+        }
+        if (shouldCallAI)
+        {
+            std::thread aiThread(handleAI, std::ref(chatPool));
+            aiThread.detach(); 
+        }
+
         return responseMsg.to_str();
     }
     else if (assignment == "read")
@@ -94,7 +117,7 @@ int main()
 
     std::cout << "Server is running on port " << port << "..." << std::endl;
 
-    ChatPool chatPool("./chatPool/chatPool.db");
+    ChatPool chatPool("./chatPool/chatPool.db", "python3 ./AI/xiaowen.py");
 
     while (true)
     {

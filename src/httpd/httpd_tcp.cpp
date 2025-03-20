@@ -201,7 +201,7 @@ void HTTPD_TCP::handleClient(const int clientSocket) const
     buffer[bytesRead] = '\0';
 
     std::string request(buffer);
-    writeLog("[Request]\n" + request);
+    //writeLog("[Request]\n" + request);
 
     std::istringstream iss(request);
     std::string        method, path, protocol;

@@ -1,53 +1,188 @@
-[2025-03-10 21:20:18] HTTPD_TCP starts running
-[2025-03-10 21:20:23] Socket initialized on IP: 0.0.0.0, Port: 7001, fd=3
-[2025-03-10 21:20:30] Accepted connection from client IP: 127.0.0.1
-[2025-03-10 21:20:30] Accepted connection from client IP: 127.0.0.1
-[2025-03-10 21:20:30] [Request]
-GET / HTTP/1.1
-Host: localhost:7001
-Connection: keep-alive
-sec-ch-ua: "Chromium";v="134", "Not:A-Brand";v="24", "Microsoft Edge";v="134"
-sec-ch-ua-mobile: ?0
-sec-ch-ua-platform: "Windows"
-Upgrade-Insecure-Requests: 1
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0
-Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
-Sec-Fetch-Site: none
-Sec-Fetch-Mode: navigate
-Sec-Fetch-User: ?1
-Sec-Fetch-Dest: document
-Accept-Encoding: gzip, deflate, br, zstd
-Accept-Language: zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7,en-GB;q=0.6
-Cookie: chat_user_id=user-az3mybnvoj
-
-
-[2025-03-10 21:20:30] [Request]
-GET /messages HTTP/1.1
-Host: localhost:7001
-Connection: keep-alive
-sec-ch-ua-platform: "Windows"
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0
-sec-ch-ua: "Chromium";v="134", "Not:A-Brand";v="24", "Microsoft Edge";v="134"
-sec-ch-ua-mobile: ?0
-Accept: */*
-Sec-Fetch-Site: same-origin
-Sec-Fetch-Mode: cors
-Sec-Fetch-Dest: empty
-Referer: http://localhost:7001/
-Accept-Encoding: gzip, deflate, br, zstd
-Accept-Language: zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7,en-GB;q=0.6
-Cookie: chat_user_id=user-az3mybnvoj[2025-03-11 00:47:41] HTTPD_TCP starts running
-[2025-03-11 00:47:45] Socket initialized on IP: 0.0.0.0, Port: 7001, fd=3
-[2025-03-11 00:47:51] Accepted connection from client IP: 172.20.69.176
-[2025-03-11 00:47:51] [Request]
-GET / HTTP/1.1
-Host: 80ss2640ri25.vicp.fun
-Sec-Fetch-Site: none
-Cookie: chat_user_id=user-utcysfsx9m
-Connection: keep-alive
-Sec-Fetch-Mode: navigate
-Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
-User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 17_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.7 Mobile/15E148 Safari/604.1
-Accept-Language: en-US,en;q=0.9
-Sec-Fetch-Dest: document
-Accept-Encoding: gzip, deflate, br
+[2025-03-20 23:27:10] HTTPD_TCP starts running
+[2025-03-20 23:27:12] Socket initialized on IP: 0.0.0.0, Port: 7001, fd=3
+[2025-03-20 23:27:20] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:27:20] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:27:20] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:27:22] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:27:23] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:27:25] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:27:25] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:27:25] [Response] POST /messages write:
+{"message":"Message stored successfully.","status":"success"}
+[2025-03-20 23:27:25] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:27:25] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:27:27] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:27:27] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:27:29] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:27:29] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:27:31] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:27:31] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:27:33] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:27:34] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:27:35] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:27:36] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:27:38] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:27:38] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:27:40] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:27:40] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:27:40] [Response] POST /messages write:
+{"message":"Message stored successfully.","status":"success"}
+[2025-03-20 23:27:40] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:27:41] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:27:41] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:27:43] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:27:43] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:27:45] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:27:45] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:27:47] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:27:47] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:27:49] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:27:49] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:27:51] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:27:52] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:27:53] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:27:53] [Response] POST /messages write:
+{"message":"Message stored successfully.","status":"success"}
+[2025-03-20 23:27:53] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:27:53] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:27:53] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:27:55] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:27:55] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:27:57] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:27:57] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:27:59] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:27:59] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:28:01] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:28:01] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:28:03] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:28:03] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:28:04] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:28:05] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:28:06] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:28:06] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:28:08] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:28:08] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:28:10] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:28:10] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:28:12] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:28:12] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:28:14] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:28:14] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:28:15] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:28:16] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:28:17] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:28:17] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:28:19] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:28:19] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:28:21] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:28:21] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:28:23] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:28:23] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:28:25] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:28:25] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:28:27] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:28:27] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:28:29] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:28:29] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:28:29] [Response] POST /messages write:
+{"message":"Message stored successfully.","status":"success"}
+[2025-03-20 23:28:29] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:28:29] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:28:31] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:28:31] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:28:33] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:28:33] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:28:35] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:28:35] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:28:37] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:28:37] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:28:39] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:28:39] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:28:41] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:28:41] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:28:43] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:28:43] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:28:45] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:28:45] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:28:47] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:28:47] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:28:49] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:28:49] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:28:49] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:28:49] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:28:51] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:28:51] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:28:53] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:28:53] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:28:55] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:28:55] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:28:57] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:28:57] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:28:59] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:28:59] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:29:01] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:29:01] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:29:03] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:29:04] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:29:05] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:29:06] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:29:08] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:29:08] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:29:10] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:29:10] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:29:12] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:29:12] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:29:14] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:29:14] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:29:16] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:29:17] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:29:21] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:29:19] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:29:23] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:29:23] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:29:27] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:29:28] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:29:32] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:29:32] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:29:36] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:29:36] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:29:40] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:29:40] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:29:44] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:29:44] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:29:47] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:29:48] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:29:51] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:29:51] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:29:55] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:29:56] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:29:59] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:30:00] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:30:04] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:30:04] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:30:08] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:30:08] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:30:12] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:30:12] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:30:17] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:30:17] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:31:31] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:31:31] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:32:37] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:32:37] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:32:40] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:32:40] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:32:44] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:32:44] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:32:48] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:32:48] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:32:52] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:32:52] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:32:56] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:32:56] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:33:00] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:33:00] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:33:04] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:33:04] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:33:08] Accepted connection from client IP: 127.0.0.1
+[2025-03-20 23:33:09] Accepted connection from client IP: 127.0.0.1
