@@ -1,6 +1,6 @@
 # Tiny Bridge --- Chat Pool
 
-# 在Windows子系统WSL（Linux）中用C++搭建简单聊天服务器
+# 在Windows子系统WSL（Linux）中用C++搭建简单聊天服务器，并支持AI助手！
 仓库地址：https://github.com/Leo072060/Chat-Pool
 <img src=".\assert\xiaowen_ai.png" alt="display" style="zoom: 50%;" />
 
@@ -37,6 +37,8 @@
 |—— build
 |    |—— httpd
 |    |    |—— index.html
+|    |—— AI
+|    |    |—— xiaowen.py 调用AI的脚本
 |—— .clang-format
 ```
 # 运行说明
@@ -138,6 +140,10 @@
 将主机IP映射到分配的网站域名即可实现公网访问。
 
 ![Intranet_penetration](assert/Intranet_penetration.png)
+
+# AI助手
+
+在build/AI/xiaowen.py脚本文件中配置智谱AI大模型（https://www.bigmodel.cn/)API的keys。
 
 # 异常处理
 
