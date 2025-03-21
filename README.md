@@ -143,7 +143,7 @@
 
 # AI助手
 
-在build/AI/xiaowen.py脚本文件中配置智谱AI大模型（https://www.bigmodel.cn/)API的keys。
+在build/AI/xiaowen.py脚本文件中配置智谱AI大模型API的keys。
 
 # 异常处理
 
